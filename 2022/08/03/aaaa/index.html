@@ -344,10 +344,28 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
-    <div id="aplayer" style="height: 80px"></div>
-    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
-    <script type="text/javascript" src="/js/music.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+    <!-- require MetingJS -->
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+        <meting-js style="margin-top: 1.5rem;width: auto;height: auto;"
+        server="netease"
+        type="song"
+        id="128082"
+        theme="#2980b9"
+        loop="all"
+        autoplay="true"
+        order="random"
+        storageName="aplayer-setting"
+        lrctype= 0
+        >
+        </meting-js>
+    <style>
+        .aplayer{
+            margin: 1.5rem 0;
+        }
+    </style>
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -443,7 +461,7 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
