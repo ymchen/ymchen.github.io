@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>勇气</title>
-    <url>/2022/08/03/aaaa/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/images/pasted-3.png" alt="upload successful"></p>
+    <title>20220811全员核酸</title>
+    <url>/2022/08/11/20220811%E5%85%A8%E5%91%98%E6%A0%B8%E9%85%B8/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/%5Cimages%5Cpasted-4.png" alt="全员核酸"></p>
 ]]></content>
-      <categories>
-        <category>临时</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
-      </tags>
   </entry>
   <entry>
     <title>Markdown</title>
     <url>/2022/08/09/Markdown/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Markdown-在线编辑器"><a href="#Markdown-在线编辑器" class="headerlink" title="Markdown 在线编辑器"></a>Markdown 在线编辑器</h1><p><a href="http://jbt.github.io/markdown-editor/">Web地址</a></p>
+<p>参考地址 <a href="https://support.typoraio.cn/zh/Markdown-Reference/">https://support.typoraio.cn/zh/Markdown-Reference/</a></p>
 ]]></content>
       <categories>
         <category>Technology</category>
@@ -23,6 +18,24 @@
       <tags>
         <tag>Markdown</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>获取执行脚本信息</title>
+    <url>/2022/08/09/%E8%8E%B7%E5%8F%96%E6%89%A7%E8%A1%8C%E8%84%9A%E6%9C%AC%E4%BF%A1%E6%81%AF/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="获取执行文件信息"><a href="#获取执行文件信息" class="headerlink" title="获取执行文件信息"></a>获取执行文件信息</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">parentdirname, parentfilename = os.path.split(os.path.abspath(sys.argv[<span class="number">0</span>])) </span><br><span class="line"><span class="comment">#执行路径 parentdirname D:\ChenYiMin\TJFJ\python\python_tool\dbconnetoper.py</span></span><br><span class="line"><span class="comment">#执行脚本 parentfilename dbconnetoper.py</span></span><br><span class="line">file_ext = os.path.splitext(<span class="string">'dbconnetoper.py'</span>)</span><br><span class="line"><span class="comment">#front : dbconnetoper</span></span><br><span class="line"><span class="comment">#ext : .py</span></span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>Technology</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>音乐</title>
+    <url>/2022/08/09/%E9%9F%B3%E4%B9%90/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=66651&amp;auto=0&amp;height=66">
+</iframe>]]></content>
   </entry>
   <entry>
     <title>摘要</title>
@@ -44,6 +57,29 @@
 <h1 id="归档页面"><a href="#归档页面" class="headerlink" title="归档页面"></a>归档页面</h1><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">archive_generator:</span><br><span class="line">  per_page: 50</span><br><span class="line">  yearly: true</span><br><span class="line">  monthly: true</span><br></pre></td></tr></tbody></table></figure>]]></content>
   </entry>
   <entry>
+    <title>星期四</title>
+    <url>/2022/08/04/%E6%98%9F%E6%9C%9F%E5%9B%9B/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="今天风好大"><a href="#今天风好大" class="headerlink" title="今天风好大"></a>今天风好大</h1>]]></content>
+  </entry>
+  <entry>
+    <title>勇气</title>
+    <url>/2022/08/03/aaaa/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/images/pasted-3.png" alt="upload successful"></p>
+]]></content>
+      <categories>
+        <category>临时</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>孤勇者</title>
+    <url>/2022/08/03/%E5%AD%A4%E5%8B%87%E8%80%85/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/images/pasted-2.png" alt="upload successful"></p>
+]]></content>
+  </entry>
+  <entry>
     <title>忆旧游·记愁横浅黛</title>
     <url>/2022/08/02/%E5%BF%86%E6%97%A7%E6%B8%B8%C2%B7%E8%AE%B0%E6%84%81%E6%A8%AA%E6%B5%85%E9%BB%9B/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="朝代：宋代作者：周邦彦"><a href="#朝代：宋代作者：周邦彦" class="headerlink" title="朝代：宋代作者：周邦彦"></a>朝代：宋代作者：周邦彦</h2><p>  记愁横浅黛，泪洗红铅，门掩秋宵。<span id="more"></span><br>  坠叶惊离思，听寒螀夜泣，乱雨萧萧。<br>  凤钗半脱云鬓，窗影烛花摇。<br>  渐暗竹敲凉，疏萤照晓，两地魂销。<br>  迢迢，问音信，道径底花阴，时认鸣镳。<br>  也拟临朱户，叹因郎憔悴，羞见郎招。<br>  旧巢更有新燕，杨柳拂河桥。<br>  但满眼京尘，东风竟日吹露桃。</p>
@@ -54,34 +90,5 @@
       <tags>
         <tag>古诗</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>星期四</title>
-    <url>/2022/08/04/%E6%98%9F%E6%9C%9F%E5%9B%9B/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="今天风好大"><a href="#今天风好大" class="headerlink" title="今天风好大"></a>今天风好大</h1>]]></content>
-  </entry>
-  <entry>
-    <title>孤勇者</title>
-    <url>/2022/08/03/%E5%AD%A4%E5%8B%87%E8%80%85/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/images/pasted-2.png" alt="upload successful"></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>获取执行脚本信息</title>
-    <url>/2022/08/09/%E8%8E%B7%E5%8F%96%E6%89%A7%E8%A1%8C%E8%84%9A%E6%9C%AC%E4%BF%A1%E6%81%AF/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="获取执行文件信息"><a href="#获取执行文件信息" class="headerlink" title="获取执行文件信息"></a>获取执行文件信息</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">parentdirname, parentfilename = os.path.split(os.path.abspath(sys.argv[<span class="number">0</span>])) </span><br><span class="line"><span class="comment">#执行路径 parentdirname D:\ChenYiMin\TJFJ\python\python_tool\dbconnetoper.py</span></span><br><span class="line"><span class="comment">#执行脚本 parentfilename dbconnetoper.py</span></span><br><span class="line">file_ext = os.path.splitext(<span class="string">'dbconnetoper.py'</span>)</span><br><span class="line"><span class="comment">#front : dbconnetoper</span></span><br><span class="line"><span class="comment">#ext : .py</span></span><br></pre></td></tr></tbody></table></figure>
-]]></content>
-      <categories>
-        <category>Technology</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>音乐</title>
-    <url>/2022/08/09/%E9%9F%B3%E4%B9%90/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=66651&amp;auto=0&amp;height=66">
-</iframe>]]></content>
   </entry>
 </search>
