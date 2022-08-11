@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Mary&#39;s Blog </title>
+  <title>光之国</title>
   
-  <subtitle>Write Something Interesting</subtitle>
+  <subtitle>建立在距离地球300万光年的M78星云中一个名为奥特之星的星球上</subtitle>
   <link href="https://example.com/atom.xml" rel="self"/>
   
   <link href="https://example.com/"/>
@@ -10,7 +10,7 @@
   <id>https://example.com/</id>
   
   <author>
-    <name>陈小馨</name>
+    <name>陈小胖打怪兽</name>
     
   </author>
   
