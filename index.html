@@ -193,6 +193,99 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://example.com/2022/08/11/hexo-admin-window%E4%B8%8B%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.webp">
+      <meta itemprop="name" content="陈小馨">
+      <meta itemprop="description" content="Happy everyday">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mary's Blog ">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/08/11/hexo-admin-window%E4%B8%8B%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/" class="post-title-link" itemprop="url">hexo-admin window下图片显示</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-08-11 09:45:05 / 修改时间：09:52:33" itemprop="dateCreated datePublished" datetime="2022-08-11T09:45:05+08:00">2022-08-11</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/08/11/hexo-admin-window%E4%B8%8B%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/08/11/hexo-admin-window%E4%B8%8B%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>976</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="图片显示路径问题"><a href="#图片显示路径问题" class="headerlink" title="图片显示路径问题"></a>图片显示路径问题</h3><h4 id="1-打开目录的node-modules找到hexo-admin"><a href="#1-打开目录的node-modules找到hexo-admin" class="headerlink" title="1.打开目录的node_modules找到hexo-admin"></a>1.打开目录的node_modules找到hexo-admin</h4><h5 id="双击进入该文件夹，打开“api-js”文件，通过搜索“imagePath”字符找到下图的代码片段，红框内就是我们要改的代码"><a href="#双击进入该文件夹，打开“api-js”文件，通过搜索“imagePath”字符找到下图的代码片段，红框内就是我们要改的代码" class="headerlink" title="双击进入该文件夹，打开“api.js”文件，通过搜索“imagePath”字符找到下图的代码片段，红框内就是我们要改的代码"></a>双击进入该文件夹，打开“api.js”文件，通过搜索“imagePath”字符找到下图的代码片段，红框内就是我们要改的代码</h5><figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//filename = path.join(imagePath, filename)</span></span><br><span class="line">filename = imagePath+<span class="string">"/"</span>+ filename <span class="comment">// 修改</span></span><br><span class="line"><span class="keyword">var</span> outpath = path.<span class="title function_">join</span>(hexo.<span class="property">source_dir</span>, filename)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> dataURI = req.<span class="property">body</span>.<span class="property">data</span>.<span class="title function_">slice</span>(<span class="string">'data:image/png;base64,'</span>.<span class="property">length</span>)</span><br><span class="line"><span class="keyword">var</span> buf = <span class="keyword">new</span> <span class="title class_">Buffer</span>(dataURI, <span class="string">'base64'</span>)</span><br><span class="line">hexo.<span class="property">log</span>.<span class="title function_">d</span>(<span class="string">`saving image to <span class="subst">${outpath}</span>`</span>)</span><br><span class="line">fs.<span class="title function_">writeFile</span>(outpath, buf, <span class="keyword">function</span> (<span class="params">err</span>) {</span><br><span class="line">  <span class="keyword">if</span> (err) {</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(err)</span><br><span class="line">  }</span><br><span class="line">  hexo.<span class="property">source</span>.<span class="title function_">process</span>().<span class="title function_">then</span>(<span class="keyword">function</span> (<span class="params"></span>) {</span><br><span class="line">    res.<span class="title function_">done</span>({</span><br><span class="line">      <span class="attr">src</span>: filename,  <span class="comment">//修改</span></span><br><span class="line">      <span class="attr">msg</span>: msg</span><br><span class="line">    })</span><br><span class="line">  });</span><br><span class="line">})</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="打开hexo-admin找到bundle-js"><a href="#打开hexo-admin找到bundle-js" class="headerlink" title="打开hexo-admin找到bundle.js"></a>打开hexo-admin找到bundle.js</h4><figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">uploadImage</span>: <span class="keyword">function</span>(<span class="params">data, filename</span>)  {</span><br><span class="line">		<span class="keyword">var</span> imgJson=<span class="title function_">post</span>(<span class="string">'/images/upload'</span>, {<span class="attr">data</span>: data, <span class="attr">filename</span>: filename});</span><br><span class="line">		<span class="keyword">var</span> start = (<span class="keyword">new</span> <span class="title class_">Date</span>()).<span class="title function_">getTime</span>();</span><br><span class="line">		<span class="keyword">while</span>((<span class="keyword">new</span> <span class="title class_">Date</span>()).<span class="title function_">getTime</span>() - start &lt; <span class="number">1000</span>) {</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">return</span> imgJson;</span><br><span class="line">	}</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://example.com/2022/08/11/20220811%E5%85%A8%E5%91%98%E6%A0%B8%E9%85%B8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -218,7 +311,16 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-08-11 09:24:32 / 修改时间：09:25:20" itemprop="dateCreated datePublished" datetime="2022-08-11T09:24:32+08:00">2022-08-11</time>
+              <time title="创建时间：2022-08-11 09:24:00 / 修改时间：09:44:04" itemprop="dateCreated datePublished" datetime="2022-08-11T09:24:00+08:00">2022-08-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">生活</span></a>
+                </span>
             </span>
 
           
@@ -562,104 +664,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://example.com/2022/08/04/test1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.webp">
-      <meta itemprop="name" content="陈小馨">
-      <meta itemprop="description" content="Happy everyday">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mary's Blog ">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/08/04/test1/" class="post-title-link" itemprop="url">摘要</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-08-04 09:38:00 / 修改时间：10:07:12" itemprop="dateCreated datePublished" datetime="2022-08-04T09:38:00+08:00">2022-08-04</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2022/08/04/test1/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/08/04/test1/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>500</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>在文章中使用 ，那么之前的文字将会被视为摘要。首页中将只出现这部分文字，同时这部分文字也会出现在正文之中。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/08/04/test1/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -727,20 +735,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

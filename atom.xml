@@ -6,7 +6,7 @@
   <link href="https://example.com/atom.xml" rel="self"/>
   
   <link href="https://example.com/"/>
-  <updated>2022-08-11T01:25:20.421Z</updated>
+  <updated>2022-08-11T01:52:33.893Z</updated>
   <id>https://example.com/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>hexo-admin window下图片显示</title>
+    <link href="https://example.com/2022/08/11/hexo-admin-window%E4%B8%8B%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/"/>
+    <id>https://example.com/2022/08/11/hexo-admin-window%E4%B8%8B%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/</id>
+    <published>2022-08-11T01:45:05.000Z</published>
+    <updated>2022-08-11T01:52:33.893Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="图片显示路径问题"><a href="#图片显示路径问题" class="headerlink" title="图片显示路径问题"></a>图片显示路径问题</h3><h4 id="1-打开目录的node-modules找到hexo-admin"><a href="#1-打开目录的node-modules找到hexo-admin" class="headerlink" title="1.打开目录的node_modules找到hexo-admin"></a>1.打开目录的node_modules找到hexo-admin</h4><h5 id="双击进入该文件夹，打开“api-js”文件，通过搜索“imagePath”字符找到下图的代码片段，红框内就是我们要改的代码"><a href="#双击进入该文件夹，打开“api-js”文件，通过搜索“imagePath”字符找到下图的代码片段，红框内就是我们要改的代码" class="headerlink" title="双击进入该文件夹，打开“api.js”文件，通过搜索“imagePath”字符找到下图的代码片段，红框内就是我们要改的代码"></a>双击进入该文件夹，打开“api.js”文件，通过搜索“imagePath”字符找到下图的代码片段，红框内就是我们要改的代码</h5><figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//filename = path.join(imagePath, filename)</span></span><br><span class="line">filename = imagePath+<span class="string">"/"</span>+ filename <span class="comment">// 修改</span></span><br><span class="line"><span class="keyword">var</span> outpath = path.<span class="title function_">join</span>(hexo.<span class="property">source_dir</span>, filename)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> dataURI = req.<span class="property">body</span>.<span class="property">data</span>.<span class="title function_">slice</span>(<span class="string">'data:image/png;base64,'</span>.<span class="property">length</span>)</span><br><span class="line"><span class="keyword">var</span> buf = <span class="keyword">new</span> <span class="title class_">Buffer</span>(dataURI, <span class="string">'base64'</span>)</span><br><span class="line">hexo.<span class="property">log</span>.<span class="title function_">d</span>(<span class="string">`saving image to <span class="subst">${outpath}</span>`</span>)</span><br><span class="line">fs.<span class="title function_">writeFile</span>(outpath, buf, <span class="keyword">function</span> (<span class="params">err</span>) {</span><br><span class="line">  <span class="keyword">if</span> (err) {</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(err)</span><br><span class="line">  }</span><br><span class="line">  hexo.<span class="property">source</span>.<span class="title function_">process</span>().<span class="title function_">then</span>(<span class="keyword">function</span> (<span class="params"></span>) {</span><br><span class="line">    res.<span class="title function_">done</span>({</span><br><span class="line">      <span class="attr">src</span>: filename,  <span class="comment">//修改</span></span><br><span class="line">      <span class="attr">msg</span>: msg</span><br><span class="line">    })</span><br><span class="line">  });</span><br><span class="line">})</span><br></pre></td></tr></tbody></table></figure><h4 id="打开hexo-admin找到bundle-js"><a href="#打开hexo-admin找到bundle-js" class="headerlink" title="打开hexo-admin找到bundle.js"></a>打开hexo-admin找到bundle.js</h4><figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">uploadImage</span>: <span class="keyword">function</span>(<span class="params">data, filename</span>)  {</span><br><span class="line"><span class="keyword">var</span> imgJson=<span class="title function_">post</span>(<span class="string">'/images/upload'</span>, {<span class="attr">data</span>: data, <span class="attr">filename</span>: filename});</span><br><span class="line"><span class="keyword">var</span> start = (<span class="keyword">new</span> <span class="title class_">Date</span>()).<span class="title function_">getTime</span>();</span><br><span class="line"><span class="keyword">while</span>((<span class="keyword">new</span> <span class="title class_">Date</span>()).<span class="title function_">getTime</span>() - start &lt; <span class="number">1000</span>) {</span><br><span class="line"><span class="keyword">continue</span>;</span><br><span class="line">}</span><br><span class="line"><span class="keyword">return</span> imgJson;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>20220811全员核酸</title>
     <link href="https://example.com/2022/08/11/20220811%E5%85%A8%E5%91%98%E6%A0%B8%E9%85%B8/"/>
     <id>https://example.com/2022/08/11/20220811%E5%85%A8%E5%91%98%E6%A0%B8%E9%85%B8/</id>
-    <published>2022-08-11T01:24:32.000Z</published>
-    <updated>2022-08-11T01:25:20.421Z</updated>
+    <published>2022-08-11T01:24:00.000Z</published>
+    <updated>2022-08-11T01:44:04.856Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="/%5Cimages%5Cpasted-4.png" alt="全员核酸"></p>]]></content>
     
@@ -33,6 +53,10 @@
     
     
     
+    <category term="生活" scheme="https://example.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="日常" scheme="https://example.com/tags/%E6%97%A5%E5%B8%B8/"/>
     
   </entry>
   
